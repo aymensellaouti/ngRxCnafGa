@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col">
+    <div class="alert alert-warning">
+      {{ date | date : "full" | uppercase }}
+    </div>
+    <app-list (forwardCv)="getSelectedCv($event)" [cvs]="cvs"></app-list>
+  </div>
+  <div class="col">
+    <app-cv-card [cv]="selectedCv"></app-cv-card>
+  </div>
+</div>
+<app-embauche></app-embauche>
