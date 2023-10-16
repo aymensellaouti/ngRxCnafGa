@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ToastrService } from "ngx-toastr";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
 
 @Component({
   selector: "app-test-observable",
@@ -26,7 +26,7 @@ export class TestObservableComponent {
         console.log(val);
       },
     });
-    this.monObservable.subscribe({
+    this.monObservable.pipe(map((x) => x * 3)).subscribe({
       next: (val) => {
         this.toaster.info("" + val);
       },

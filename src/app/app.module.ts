@@ -26,6 +26,7 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { TestObservableComponent } from './components/test-observable/test-observable.component';
 import { TestPureComponent } from './components/test-pure/test-pure.component';
 import { CalulFPipe } from './pipes/calul-f.pipe';
+import { TestFromOfComponent } from './components/test-from-of/test-from-of.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CalulFPipe } from './pipes/calul-f.pipe';
     TestObservableComponent,
     TestPureComponent,
     CalulFPipe,
+    TestFromOfComponent,
   ],
   imports: [
     BrowserModule,
