@@ -27,6 +27,7 @@ import { TestObservableComponent } from './components/test-observable/test-obser
 import { TestPureComponent } from './components/test-pure/test-pure.component';
 import { CalulFPipe } from './pipes/calul-f.pipe';
 import { TestFromOfComponent } from './components/test-from-of/test-from-of.component';
+import { SliderComponent } from './rxjs/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { TestFromOfComponent } from './components/test-from-of/test-from-of.comp
     TestPureComponent,
     CalulFPipe,
     TestFromOfComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
