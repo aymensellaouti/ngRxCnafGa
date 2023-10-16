@@ -1,23 +1,110 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['']" [routerLinkActiveOptions]="{exact: true}"
-      routerLinkActive="active text-primary">cvStartingAdvProject</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="['']navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <a
+      class="navbar-brand"
+      [routerLink]="['']"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active text-primary"
+      >cvStartingAdvProject</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="['']navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" [routerLink]="['']" [routerLinkActiveOptions]="{exact: true}"
-          routerLinkActive="active text-primary">Home</a>
-        <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['cv']"
-          routerLinkActive="active text-primary">Cv</a>
-        <a *ngIf="authService.isAuthenticated()" class="nav-link" [routerLink]="['cv/add']"
-          routerLinkActive="active text-primary">Add Cv</a>
-        <a class="nav-link" [routerLink]="['todo']" routerLinkActive="active text-primary">Todo</a>
-        <a *ngIf="!authService.isAuthenticated()" class="nav-link" [routerLink]="['login']"
-          routerLinkActive="active text-primary">Login</a>
-        <a *ngIf="authService.isAuthenticated()" class="nav-link" (click)="logout()">Logout</a>
+        <a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active text-primary"
+          >Home</a
+        >
+        <a
+          class="nav-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['cv']"
+          routerLinkActive="active text-primary"
+          >Cv</a
+        >
+        <a
+          *ngIf="authService.isAuthenticated()"
+          class="nav-link"
+          [routerLink]="['cv/add']"
+          routerLinkActive="active text-primary"
+          >Add Cv</a
+        >
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            RxJs
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['fromOf']"
+                routerLinkActive="active "
+                >Of From</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['pure']"
+                routerLinkActive="active "
+                >Pure Pipe</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['testObservable']"
+                routerLinkActive="active "
+                >Observable</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['slider']"
+                routerLinkActive="active "
+                >Slider</a
+              >
+            </li>
+          </ul>
+        </li>
+        <a
+          class="nav-link"
+          [routerLink]="['todo']"
+          routerLinkActive="active text-primary"
+          >Todo</a
+        >
+        <a
+          *ngIf="!authService.isAuthenticated()"
+          class="nav-link"
+          [routerLink]="['login']"
+          routerLinkActive="active text-primary"
+          >Login</a
+        >
+        <a
+          *ngIf="authService.isAuthenticated()"
+          class="nav-link"
+          (click)="logout()"
+          >Logout</a
+        >
       </div>
     </div>
   </div>

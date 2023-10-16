@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ToastrService } from "ngx-toastr";
-import { Observable, map } from "rxjs";
+import { Observable, filter, map, take } from "rxjs";
 
 @Component({
   selector: "app-test-observable",
@@ -26,16 +26,25 @@ export class TestObservableComponent {
         console.log(val);
       },
     });
-    this.monObservable.pipe(map((x) => x * 3)).subscribe({
-      next: (val) => {
-        this.toaster.info("" + val);
-      },
-      error: (e) => {
-        console.log(e);
-      },
-      complete: () => {
-        this.toaster.warning("C'est fini !!");
-      },
-    });
+    this.monObservable
+      /* 5 4 3 2 1 */
+      .pipe(
+        map((x) => x * 3),
+        /* 15 12 9 6 3 */
+        filter((x) => !(x % 2)),
+        /* 12 6 */
+        take(1)
+      )
+      .subscribe({
+        next: (val) => {
+          this.toaster.info("" + val);
+        },
+        error: (e) => {
+          console.log(e);
+        },
+        complete: () => {
+          this.toaster.warning("C'est fini !!");
+        },
+      });
   }
 }

@@ -28,6 +28,7 @@ import { TestPureComponent } from './components/test-pure/test-pure.component';
 import { CalulFPipe } from './pipes/calul-f.pipe';
 import { TestFromOfComponent } from './components/test-from-of/test-from-of.component';
 import { SliderComponent } from './rxjs/slider/slider.component';
+import { TestSliderComponent } from './rxjs/test-slider/test-slider.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { SliderComponent } from './rxjs/slider/slider.component';
     CalulFPipe,
     TestFromOfComponent,
     SliderComponent,
+    TestSliderComponent,
   ],
   imports: [
     BrowserModule,
