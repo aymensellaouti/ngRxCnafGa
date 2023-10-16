@@ -1,0 +1,20 @@
+<input
+  (change)="emit1(+s1.value)"
+  type="text"
+  class="form-control"
+  #s1
+/><button (click)="terminate(stream1$)" class="btn btn-danger">
+  Terminate Stream1
+</button>
+<input
+  (change)="emit2(+s2.value)"
+  type="text"
+  class="form-control"
+  #s2
+/><button (click)="terminate(stream2$)" class="btn btn-danger">
+  Terminate Stream2
+</button>
+
+<p>merge : {{ merge$ | async }}</p>
+<p>scan : {{ scan$ | async }}</p>
+<p>reduce : {{ reduce$ | async }}</p>

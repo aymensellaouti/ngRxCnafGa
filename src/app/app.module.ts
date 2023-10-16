@@ -29,6 +29,7 @@ import { CalulFPipe } from './pipes/calul-f.pipe';
 import { TestFromOfComponent } from './components/test-from-of/test-from-of.component';
 import { SliderComponent } from './rxjs/slider/slider.component';
 import { TestSliderComponent } from './rxjs/test-slider/test-slider.component';
+import { MergeReduceScanComponent } from './rxjs/merge-reduce-scan/merge-reduce-scan.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { TestSliderComponent } from './rxjs/test-slider/test-slider.component';
     TestFromOfComponent,
     SliderComponent,
     TestSliderComponent,
+    MergeReduceScanComponent,
   ],
   imports: [
     BrowserModule,

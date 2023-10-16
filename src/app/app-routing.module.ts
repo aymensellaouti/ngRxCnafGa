@@ -13,6 +13,7 @@ import { TestFromOfComponent } from "./components/test-from-of/test-from-of.comp
 import { TestObservableComponent } from "./components/test-observable/test-observable.component";
 import { TestPureComponent } from "./components/test-pure/test-pure.component";
 import { TestSliderComponent } from "./rxjs/test-slider/test-slider.component";
+import { MergeReduceScanComponent } from "./rxjs/merge-reduce-scan/merge-reduce-scan.component";
 
 const routes: Route[] = [
   { path: "", redirectTo: "cv", pathMatch: "full" },
@@ -21,6 +22,7 @@ const routes: Route[] = [
   { path: "testObservable", component: TestObservableComponent },
   { path: "pure", component: TestPureComponent },
   { path: "slider", component: TestSliderComponent },
+  { path: "mergescanreduce", component: MergeReduceScanComponent },
   {
     path: "cv",
     component: CvComponent,
