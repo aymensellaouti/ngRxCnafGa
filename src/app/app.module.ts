@@ -23,6 +23,9 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { CvCardComponent } from './cv/cv-card/cv-card.component';
 import { TodoComponent } from './todo/todo/todo.component';
+import { TestObservableComponent } from './components/test-observable/test-observable.component';
+import { TestPureComponent } from './components/test-pure/test-pure.component';
+import { CalulFPipe } from './pipes/calul-f.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { TodoComponent } from './todo/todo/todo.component';
     NavbarComponent,
     NF404Component,
     LoginComponent,
+    TestObservableComponent,
+    TestPureComponent,
+    CalulFPipe,
   ],
   imports: [
     BrowserModule,
