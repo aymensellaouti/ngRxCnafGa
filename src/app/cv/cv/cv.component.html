@@ -1,12 +1,15 @@
-<div class="row">
+<div class="row" *ngIf="cvs$ | async as cvs">
   <div class="col">
+    <div class="alert alert-secondary">
+      Le nombre de cv sélectionné est : {{ nbClick }}
+    </div>
     <div class="alert alert-warning">
       {{ date | date : "full" | uppercase }}
     </div>
-    <app-list (forwardCv)="getSelectedCv($event)" [cvs]="cvs"></app-list>
+    <app-list [cvs]="cvs"></app-list>
   </div>
   <div class="col">
-    <app-cv-card [cv]="selectedCv"></app-cv-card>
+    <app-cv-card></app-cv-card>
   </div>
 </div>
 <app-embauche></app-embauche>

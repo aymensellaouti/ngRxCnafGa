@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { APP_ROUTES } from "../../../config/routes.config";
 import { AuthService } from "../../auth/services/auth.service";
-import { Observable } from "rxjs";
+import { EMPTY, Observable, catchError, throwError } from "rxjs";
 
 @Component({
   selector: "app-details-cv",
@@ -24,7 +24,12 @@ export class DetailsCvComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params["id"];
-    this.cv$ = this.cvService.getCvById(+id);
+    this.cv$ = this.cvService.getCvById(+id).pipe(
+      catchError((e) => {
+        this.router.navigate([APP_ROUTES.cv]);
+        return EMPTY;
+      })
+    );
     /* .subscribe({
         next: (cv) => {
           this.cv = cv;

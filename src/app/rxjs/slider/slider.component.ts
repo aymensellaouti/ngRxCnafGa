@@ -29,10 +29,9 @@ export class SliderComponent implements OnInit {
   ];
   slider$!: Observable<string>;
   photos$!: Observable<Photo[]>;
-  constructor(private http: HttpClient) {
-    this.photos$ = this.http.get<Photo[]>(API.photos);
-  }
+  constructor(private http: HttpClient) {}
   ngOnInit(): void {
+    this.photos$ = this.http.get<Photo[]>(API.photos);
     this.slider$ = combineLatest([
       /* API */ this.photos$,
       /* Le Timer */ timer(0, this.time),

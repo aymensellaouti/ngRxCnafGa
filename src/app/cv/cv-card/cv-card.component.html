@@ -1,18 +1,24 @@
-<div class="card-container" *ngIf="cv">
+<div class="card-container" *ngIf="cv$ | async as cv">
   <div class="card">
     <div class="front">
       <div class="cover">
-        <img src="assets/images/rotating_card_thumb2.png">
+        <img src="assets/images/rotating_card_thumb2.png" />
       </div>
       <div class="user">
-        <img alt="user" class="img-circle" src="assets/images/{{cv.path | defaultImage}}">
+        <img
+          alt="user"
+          class="img-circle"
+          src="assets/images/{{ cv.path | defaultImage }}"
+        />
       </div>
       <div class="content">
         <div class="main">
-          <h3 class="name">{{cv.firstname}} {{cv.name}}</h3>
-          <p class="profession">{{cv.job}}</p>
-          <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they
-            love me everywhere"</p>
+          <h3 class="name">{{ cv.firstname }} {{ cv.name }}</h3>
+          <p class="profession">{{ cv.job }}</p>
+          <p class="text-center">
+            "I'm the new Sinatra, and since I made it here I can make it
+            anywhere, yeah, they love me everywhere"
+          </p>
         </div>
         <div class="footer">
           <i class="fa fa-mail-forward"></i> Auto Rotation
@@ -26,34 +32,30 @@
       <div class="content">
         <div class="main">
           <h4 class="text-center">Job Description</h4>
-          <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+          <p class="text-center">
+            Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...
+          </p>
           <div class="stats-container">
             <div class="stats">
               <h4>235</h4>
-              <p>
-                Followers
-              </p>
+              <p>Followers</p>
             </div>
             <div class="stats">
               <h4>114</h4>
-              <p>
-                Following
-              </p>
+              <p>Following</p>
             </div>
             <div class="stats">
               <h4>35</h4>
-              <p>
-                Projects
-              </p>
+              <p>Projects</p>
             </div>
           </div>
         </div>
       </div>
       <div class="footer">
-        <button (click)="embaucher()" class="m-1 btn btn-primary">
+        <button (click)="embaucher(cv)" class="m-1 btn btn-primary">
           embaucher
         </button>
-        <button [routerLink]="['/cv', cv.id]" class=" m-1 btn btn-dark">
+        <button [routerLink]="['/cv', cv.id]" class="m-1 btn btn-dark">
           détails
         </button>
       </div>
