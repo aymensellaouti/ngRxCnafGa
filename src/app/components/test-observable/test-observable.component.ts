@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from "@angular/core";
 import { ToastrService } from "ngx-toastr";
 import { Observable, Subscription, filter, map, take } from "rxjs";
-
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 @Component({
   selector: "app-test-observable",
   templateUrl: "./test-observable.component.html",
@@ -9,7 +9,7 @@ import { Observable, Subscription, filter, map, take } from "rxjs";
 })
 export class TestObservableComponent implements OnDestroy {
   monObservable: Observable<number>;
-  mySubbscriptions!: Subscription;
+  mySubbscriptions: Subscription = new Subscription();
   constructor(private toaster: ToastrService) {
     this.monObservable = new Observable((observer) => {
       let i = 5;
@@ -22,7 +22,7 @@ export class TestObservableComponent implements OnDestroy {
       }, 1000);
     });
     this.mySubbscriptions.add(
-      this.monObservable.subscribe({
+      this.monObservable.pipe(takeUntilDestroyed()).subscribe({
         next: (val) => {
           console.log(val);
         },

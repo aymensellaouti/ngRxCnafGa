@@ -14,17 +14,19 @@ export class CvComponent {
   seniors$: Observable<Cv[]>;
   nbClick = 0;
   date = new Date();
-  constructor(private toastr: ToastrService, private cvService: CvService) {
-    this.cvService.selectCv$.subscribe(() => this.nbClick++);
+  constructor(
+    /* private toastr: ToastrService, */ private cvService: CvService
+  ) {
+    /* this.cvService.selectCv$.subscribe(() => this.nbClick++); */
     this.cvs$ = this.cvService.getCvs().pipe(
       retry({
         count: 4,
         delay: 1500,
       }),
       catchError((e) => {
-        this.toastr.error(`
+        /*  this.toastr.error(`
             Attention!! Les données sont fictives, problème avec le serveur.
-            Veuillez contacter l'admin.`);
+            Veuillez contacter l'admin.`); */
         return of(this.cvService.getFakeCvs());
       }),
       shareReplay()
